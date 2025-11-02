@@ -94,6 +94,12 @@ McMahons monitoring site.</p>
 </h2>
 <p>The package includes daily mean streamflow data with the following
 key variables:</p>
+<pre><code><span><span class="co">#&gt; Warning in attr(x, "align"): 'xfun::attr()' is deprecated.</span></span>
+<span><span class="co">#&gt; Use 'xfun::attr2()' instead.</span></span>
+<span><span class="co">#&gt; See help("Deprecated")</span></span>
+<span><span class="co">#&gt; Warning in attr(x, "align"): 'xfun::attr()' is deprecated.</span></span>
+<span><span class="co">#&gt; Use 'xfun::attr2()' instead.</span></span>
+<span><span class="co">#&gt; See help("Deprecated")</span></span></code></pre>
 <table class="table table table-striped table-condensed table-bordered" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 YARRA WATER DATA
@@ -314,7 +320,7 @@ Flow 7day avg
 <div class="section level2">
 <h2 id="calculate-flow-statistics">Calculate Flow Statistics<a class="anchor" aria-label="anchor" href="#calculate-flow-statistics"></a>
 </h2>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/calculate_flow_stats.html">calculate_flow_stats</a></span><span class="op">(</span><span class="va">yarra_water_data</span><span class="op">)</span></span></code></pre></div>
 <p>You can use this function to calculate basic statistics for Yarra
 River streamflow data</p>
@@ -322,7 +328,7 @@ River streamflow data</p>
 <div class="section level2">
 <h2 id="analyze_seasonal_patterns">analyze_seasonal_patterns<a class="anchor" aria-label="anchor" href="#analyze_seasonal_patterns"></a>
 </h2>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Analyze seasonal patterns</span></span>
 <span><span class="va">seasonal_stats</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/analyze_seasonal_patterns.html">analyze_seasonal_patterns</a></span><span class="op">(</span><span class="va">yarra_water_data</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">seasonal_stats</span><span class="op">)</span></span>
@@ -364,7 +370,7 @@ River streamflow data</p>
 <h2 id="interactive-exploration">Interactive Exploration<a class="anchor" aria-label="anchor" href="#interactive-exploration"></a>
 </h2>
 <p>Launch the Shiny application for interactive data exploration:</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Launch the interactive app</span></span>
 <span><span class="co"># launch_app()</span></span></code></pre></div>
 <p>The Shiny app provides:</p>
