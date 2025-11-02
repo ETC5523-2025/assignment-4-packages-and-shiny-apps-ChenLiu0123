@@ -1,0 +1,35 @@
+Package: YarraWaterAnalysis
+Title: Yarra River Streamflow Data Analysis and Visualization
+Version: 0.1.0
+Authors@R: 
+          person(given = "Chen",
+         family = "Liu",
+         role = c("aut", "cre"),
+         email = "cliu0197@student.monash.edu")
+Description: Provides tools for analyzing and visualizing Yarra River 
+ streamflow data from the McMahons monitoring site. Includes interactive
+ Shiny applications for data exploration and various analytical functions
+ for hydrological analysis.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat,
+    bslib
+Imports: 
+    dplyr,
+    janitor,
+    magrittr,
+    readr,
+    kableExtra,
+    tidyverse,
+    ggplot2,
+    shiny,
+    tibble   
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+VignetteBuilder: knitr
+Depends: 
+    R (>= 3.5)
+LazyData: true

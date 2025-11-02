@@ -1,0 +1,124 @@
+---
+title: "Yarra Water Analysis"
+output: rmarkdown::html_vignette
+date: "2025-10-24"
+vignette: >
+  %\VignetteIndexEntry{Yarra Water Analysis}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r,include = FALSE}
+library(tidyverse)
+library(kableExtra)
+library(purrr)
+```
+
+
+
+## Overview
+
+The `YarraWaterAnalysis` package provides tools for analyzing and visualizing streamflow data from the Yarra River at McMahons monitoring site.
+
+Load the YarraWaterAnalysis package using the library() function.
+
+```{r}
+library(YarraWaterAnalysis)
+```
+
+
+
+## Built-in data description
+
+The package includes daily mean streamflow data with the following key variables:
+
+
+```{r,echo=FALSE}
+Description <- c("Site Id","Site Name","Datetime yyyy-mm-dd hh:mm:ss","Data type","Parameter id","Parameter","Daily mean streamflow in ML/day","Unit","Quality","Resolution","Date of measurement","Year","Month","Day","Seasonal classification","Flow magnitude category","Log Flow","Flow 7day avg")
+codebook <- tibble(Variable = colnames(yarra_water_data),
+       Type = map_chr(yarra_water_data, typeof))  %>% 
+    mutate(Description = Description)
+
+kable(codebook, align = "lc",
+      caption = "YARRA WATER DATA") %>%
+  kable_styling(full_width = F, 
+                bootstrap_options = c("striped", "condensed", "bordered"))
+```
+
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(YarraWaterAnalysis)
+library(dplyr)
+library(ggplot2)
+
+# Load the data
+data(yarra_water_data)
+
+```
+
+## Calculate Flow Statistics
+
+```{r}
+calculate_flow_stats(yarra_water_data)
+```
+
+You can use this function to calculate basic statistics for Yarra River streamflow data
+
+## analyze_seasonal_patterns
+
+```{r}
+# Analyze seasonal patterns
+seasonal_stats <- analyze_seasonal_patterns(yarra_water_data)
+print(seasonal_stats)
+
+# Plot seasonal distribution
+ggplot(yarra_water_data, aes(x = season, y = value, fill = season)) +
+  geom_boxplot() +
+  labs(title = "Yarra River Flow by Season",
+       x = "Season", y = "Flow (ML/day)") +
+  theme_minimal()
+```
+
+You can use this function to analyze seasonal patterns
+
+
+## detect_high_flow_events
+
+
+```{r, echo=FALSE}
+# Detect high flow events
+high_flows <- detect_high_flow_events(yarra_water_data, threshold = 200)
+head(high_flows)
+```
+
+You can use this function to detect high flow event
+
+
+
+## Interactive Exploration
+
+Launch the Shiny application for interactive data exploration:
+
+```{r}
+# Launch the interactive app
+# launch_app()
+```
+
+
+The Shiny app provides:
+
+- Interactive time series visualization
+- Seasonal pattern analysis
+- Flow duration curves
+- Statistical summaries
+- Data filtering capabilities

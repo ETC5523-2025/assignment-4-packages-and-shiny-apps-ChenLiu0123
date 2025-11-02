@@ -1,0 +1,93 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+
+# YarraWaterAnalysis
+
+
+<!-- badges: start -->
+
+<!-- badges: end -->
+
+The `YarraWaterAnalysis` package provides tools for analyzing and visualizing streamflow data from the Yarra River at McMahons monitoring site.
+
+## Installation
+
+You can install the development version of YarraWaterAnalysis from [GitHub](https://github.com/) with:
+
+```{r  }
+# install.packages("devtools")
+#devtools::install_github("etc5523-2025/rpkg-YarraWaterAnalysis")
+```
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r  }
+library(YarraWaterAnalysis)
+## basic example code
+```
+ 
+## Calculate Flow Statistics
+
+```{r}
+calculate_flow_stats(yarra_water_data)
+```
+
+You can use this function to calculate basic statistics for Yarra River streamflow data
+
+## analyze_seasonal_patterns
+
+```{r}
+# Analyze seasonal patterns
+seasonal_stats <- analyze_seasonal_patterns(yarra_water_data)
+print(seasonal_stats)
+
+```
+
+You can use this function to analyze seasonal patterns
+
+
+## detect_high_flow_events
+
+
+```{r, echo=FALSE}
+# Detect high flow events
+high_flows <- detect_high_flow_events(yarra_water_data, threshold = 200)
+head(high_flows)
+```
+
+You can use this function to detect high flow event
+
+
+
+## Interactive Exploration
+
+Launch the Shiny application for interactive data exploration:
+
+```{r}
+# Launch the interactive app
+# launch_app()
+```
+
+
+The Shiny app provides:
+
+- Interactive time series visualization
+- Seasonal pattern analysis
+- Flow duration curves
+- Statistical summaries
+- Data filtering capabilities 
