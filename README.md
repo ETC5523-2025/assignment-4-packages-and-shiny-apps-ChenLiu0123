@@ -14,7 +14,7 @@ site.
 ## Installation
 
 You can install the development version of YarraWaterAnalysis from
-\[GitHub\](devtools::install_github(“ETC5523-2025/assignment-4-packages-and-shiny-apps-ChenLiu0123”)
+[GitHub](https://etc5523-2025.github.io/assignment-4-packages-and-shiny-apps-ChenLiu0123/)
 with:
 
 ``` r
